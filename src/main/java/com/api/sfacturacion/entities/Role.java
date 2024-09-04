@@ -1,24 +1,21 @@
 package com.api.sfacturacion.entities;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "suppliers")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Suppliers {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String ruc;
-    private String nombre;
-    private String apellido;
-    private String correo;
-    private String telefono;
-    private String direccion;
+    private String name;
 
 }
