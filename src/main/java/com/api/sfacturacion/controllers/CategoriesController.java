@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
+@CrossOrigin(origins = "http://localhost:4200")// Permite peticiones desde Angular
 public class CategoriesController {
     private final CategoriesService categoriesService;
 
