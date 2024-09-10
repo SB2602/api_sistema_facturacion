@@ -30,8 +30,9 @@ public class SuppliersController {
         suppliersService.saveSuppliers(suppliers);
     }
 
-    @PutMapping("/suppliers")
-    private void editById(@RequestBody Suppliers suppliers) {
+    @PutMapping("/suppliers/{id}")
+    private void editById(@PathVariable Long id, @RequestBody Suppliers suppliers) {
+        suppliers.setId(id);
         suppliersService.saveSuppliers(suppliers);
     }
 
