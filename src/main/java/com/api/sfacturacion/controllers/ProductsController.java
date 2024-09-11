@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProductsController {
     private final ProductsService productsService;
 
@@ -28,8 +29,9 @@ public class ProductsController {
         productsService.saveProducts(products);
     }
 
-    @PutMapping("/products")
-    private void editById(@RequestBody Products products) {
+    @PutMapping("/products/{id}")
+    private void editById(@PathVariable Long id, @RequestBody Products products) {
+        products.setId(id);
         productsService.saveProducts(products);
     }
 

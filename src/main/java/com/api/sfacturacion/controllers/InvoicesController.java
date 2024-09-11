@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
+@CrossOrigin(origins = "http://localhost:4200")
 public class InvoicesController {
     private final InvoicesService invoicesService;
 
@@ -24,7 +25,7 @@ public class InvoicesController {
     }
 
     @PostMapping("/invoices")
-    public void saveCategories(@RequestBody Invoices invoices) {
+    public void saveInvoices(@RequestBody Invoices invoices) {
         invoicesService.saveInvoices(invoices);
     }
 
@@ -38,5 +39,5 @@ public class InvoicesController {
         invoicesService.deleteById(id);
     }
 
-    
+
 }

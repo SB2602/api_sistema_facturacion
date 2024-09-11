@@ -29,8 +29,9 @@ public class CategoriesController {
         categoriesService.saveCategories(categories);
     }
 
-    @PutMapping("/categories")
-    private void editById(@RequestBody Categories categories) {
+    @PutMapping("/categories/{id}")
+    private void editById(@PathVariable Long id, @RequestBody Categories categories) {
+        categories.setId(id);
         categoriesService.saveCategories(categories);
     }
 
