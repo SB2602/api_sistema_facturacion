@@ -27,4 +27,9 @@ public class InvoiceDetailsService {
     public void deleteById(Long id) {
         invoiceDetailsRepository.deleteById(id);
     }
+
+    public List<InvoiceDetails> findByInvoiceId(Long invoiceId) {
+        return invoiceDetailsRepository.findByInvoice_Id(invoiceId);
+    }
+
 }

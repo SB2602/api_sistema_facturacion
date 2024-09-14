@@ -39,4 +39,11 @@ public class InvoiceDetailsController {
     public void deleteById(@PathVariable Long id) {
         invoiceDetailsService.deleteById(id);
     }
+
+    @GetMapping("/invoice-details/invoice/{invoiceId}")
+    public List<InvoiceDetails> findByInvoiceId(@PathVariable Long invoiceId) {
+        return invoiceDetailsService.findByInvoiceId(invoiceId);
+    }
+
+
 }

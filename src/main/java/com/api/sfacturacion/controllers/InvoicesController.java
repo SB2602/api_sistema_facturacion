@@ -3,6 +3,7 @@ package com.api.sfacturacion.controllers;
 import com.api.sfacturacion.entities.Invoices;
 import com.api.sfacturacion.services.InvoicesService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,10 +25,18 @@ public class InvoicesController {
         return invoicesService.findById(id);
     }
 
+    /*
+        @PostMapping("/invoices")
+        public void saveInvoices(@RequestBody Invoices invoices) {
+            invoicesService.saveInvoices(invoices);
+        }
+    */
     @PostMapping("/invoices")
-    public void saveInvoices(@RequestBody Invoices invoices) {
-        invoicesService.saveInvoices(invoices);
+    public ResponseEntity<Invoices> saveInvoices(@RequestBody Invoices invoices) {
+        Invoices savedInvoice = invoicesService.saveInvoices(invoices);
+        return ResponseEntity.ok(savedInvoice); // Devolver la factura guardada con el ID
     }
+
 
     @PutMapping("/invoices")
     private void editById(@RequestBody Invoices invoices) {

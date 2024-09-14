@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -21,7 +21,7 @@ public class User {
     private String correo;
     private String contraseña;
 
-    private Date fecha_creacion;
+    private LocalDateTime fecha_creacion;
     private boolean estado;
 
     @ManyToOne

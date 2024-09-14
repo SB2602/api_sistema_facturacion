@@ -29,8 +29,9 @@ public class UserController {
         userService.saveUser(user);
     }
 
-    @PutMapping("/user")
-    private void editById(@RequestBody User user) {
+    @PutMapping("/user/{id}")
+    private void editById(@PathVariable Long id, @RequestBody User user) {
+        user.setId(id);
         userService.saveUser(user);
     }
 

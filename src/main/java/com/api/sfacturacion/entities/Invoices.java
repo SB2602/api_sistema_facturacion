@@ -1,13 +1,11 @@
 package com.api.sfacturacion.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -23,7 +21,6 @@ public class Invoices {
     private long id;
     private String numero_factura;
     private Date fecha;
-    private BigDecimal impuesto;
 
 
     @ManyToOne
