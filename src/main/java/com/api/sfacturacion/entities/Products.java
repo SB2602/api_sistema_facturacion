@@ -21,13 +21,13 @@ public class Products {
     private Integer precio;
     private Integer stock;
 
-    // Relación de muchos a uno con Suppliers
+
     @ManyToOne
     @JoinColumn(name = "supplier_id")
-    // La columna en la tabla "products" que referenciará al proveedor
+
     private Suppliers supplier;
 
-    // Relación con Categories
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Categories category;

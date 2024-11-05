@@ -1,6 +1,5 @@
 package com.api.sfacturacion.entities;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

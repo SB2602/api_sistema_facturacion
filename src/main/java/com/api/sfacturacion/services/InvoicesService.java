@@ -19,16 +19,9 @@ public class InvoicesService {
     }
 
     public Invoices findById(Long id) {
-        return invoicesRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontro la categoria con el id+" + id));
+        return invoicesRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontro la factura con el id+" + id));
     }
 
-    /*
-        public void saveInvoices(Invoices invoices) {
-
-            invoicesRepository.save(invoices);
-        }
-
-     */
     public Invoices saveInvoices(Invoices invoices) {
         return invoicesRepository.save(invoices); // Devolver la factura guardada con el ID
     }

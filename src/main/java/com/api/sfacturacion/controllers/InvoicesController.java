@@ -25,12 +25,7 @@ public class InvoicesController {
         return invoicesService.findById(id);
     }
 
-    /*
-        @PostMapping("/invoices")
-        public void saveInvoices(@RequestBody Invoices invoices) {
-            invoicesService.saveInvoices(invoices);
-        }
-    */
+
     @PostMapping("/invoices")
     public ResponseEntity<Invoices> saveInvoices(@RequestBody Invoices invoices) {
         Invoices savedInvoice = invoicesService.saveInvoices(invoices);
@@ -47,6 +42,4 @@ public class InvoicesController {
     public void deleteById(@PathVariable Long id) {
         invoicesService.deleteById(id);
     }
-
-
 }

@@ -19,7 +19,7 @@ public class ProductsService {
     }
 
     public Products findById(Long id) {
-        return productsRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontro la categoria con el id+" + id));
+        return productsRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontro el producto con el id+" + id));
     }
 
     public void saveProducts(Products products) {

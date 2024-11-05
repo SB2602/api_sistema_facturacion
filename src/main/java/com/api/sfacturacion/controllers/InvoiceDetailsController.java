@@ -44,6 +44,4 @@ public class InvoiceDetailsController {
     public List<InvoiceDetails> findByInvoiceId(@PathVariable Long invoiceId) {
         return invoiceDetailsService.findByInvoiceId(invoiceId);
     }
-
-
 }
